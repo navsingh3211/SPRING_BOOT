@@ -1,9 +1,15 @@
 package com.demoproject.productManagement;
-import org.springframework.stereotype.Component;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
-@Component
+@Entity
 public class Product {
-    private String name="ram";
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    private String name;
     private String type;
     private String place;
     private int warranty;
@@ -15,6 +21,14 @@ public class Product {
         this.name = name;
         this.place = place;
         this.warranty = warranty;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {

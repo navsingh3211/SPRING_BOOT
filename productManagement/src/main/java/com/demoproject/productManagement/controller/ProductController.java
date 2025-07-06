@@ -16,8 +16,8 @@ public class ProductController {
     }
 
     @GetMapping("/product")
-    public List<Product> getProduct() {
-        return productService.getAllProducts();
+    public List<Product> getProduct(@RequestParam(required = false) String name) {
+        return productService.getAllProducts(name);
     }
     @PostMapping("/add-product")
     public String createOrUpdateProduct(@RequestBody Product product) {
