@@ -1,20 +1,28 @@
 package com.demoproject.productManagement.controller;
 import com.demoproject.productManagement.Product;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.demoproject.productManagement.service.ProductService;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
 
 @RestController
 public class ProductController {
 
-    private final Product product;
-
-    public ProductController(Product product) {
-        this.product = product;
+    private final ProductService productService;
+    // ✅ Constructor Injection
+    public ProductController(ProductService productService) {
+        this.productService = productService;
     }
 
     @GetMapping("/product")
-    public Product getProduct() {
-        return product;
+    public List<Product> getProduct() {
+        return productService.getAllProducts();
+    }
+    @PostMapping("/add-product")
+    public String createOrUpdateProduct(@RequestBody Product product) {
+        productService.addProduct(product);
+        return "Product saved successfully: " + product;
     }
 }
 
