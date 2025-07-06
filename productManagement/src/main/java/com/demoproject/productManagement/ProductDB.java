@@ -1,5 +1,6 @@
 package com.demoproject.productManagement;
 
+import com.demoproject.productManagement.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

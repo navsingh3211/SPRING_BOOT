@@ -1,5 +1,5 @@
 package com.demoproject.productManagement.controller;
-import com.demoproject.productManagement.Product;
+import com.demoproject.productManagement.entity.Product;
 import com.demoproject.productManagement.service.ProductService;
 import org.springframework.web.bind.annotation.*;
 

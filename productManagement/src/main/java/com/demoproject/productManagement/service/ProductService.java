@@ -1,14 +1,14 @@
 package com.demoproject.productManagement.service;
 
-import com.demoproject.productManagement.Product;
+import com.demoproject.productManagement.entity.Product;
 import com.demoproject.productManagement.ProductDB;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+@Service
 public class ProductService {
 
     @Autowired // i want the object of ProductDB search it and give it
